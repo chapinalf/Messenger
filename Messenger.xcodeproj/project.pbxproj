@@ -13,6 +13,7 @@
 		A2607C892AF95770002167F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2607C872AF95770002167F3 /* Main.storyboard */; };
 		A2607C8B2AF95771002167F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2607C8A2AF95771002167F3 /* Assets.xcassets */; };
 		A2607C8E2AF95771002167F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2607C8C2AF95771002167F3 /* LaunchScreen.storyboard */; };
+		A2607C962AF9578F002167F3 /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C952AF9578F002167F3 /* HomescreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2607C8A2AF95771002167F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2607C8D2AF95771002167F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2607C8F2AF95771002167F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2607C952AF9578F002167F3 /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A2607C812AF95770002167F3 /* AppDelegate.swift */,
 				A2607C832AF95770002167F3 /* SceneDelegate.swift */,
 				A2607C852AF95770002167F3 /* ViewController.swift */,
+				A2607C952AF9578F002167F3 /* HomescreenView.swift */,
 				A2607C872AF95770002167F3 /* Main.storyboard */,
 				A2607C8A2AF95771002167F3 /* Assets.xcassets */,
 				A2607C8C2AF95771002167F3 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				A2607C862AF95770002167F3 /* ViewController.swift in Sources */,
 				A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */,
 				A2607C842AF95770002167F3 /* SceneDelegate.swift in Sources */,
+				A2607C962AF9578F002167F3 /* HomescreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
