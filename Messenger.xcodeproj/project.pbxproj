@@ -60,14 +60,22 @@
 			children = (
 				A2607C812AF95770002167F3 /* AppDelegate.swift */,
 				A2607C832AF95770002167F3 /* SceneDelegate.swift */,
-				A2607C852AF95770002167F3 /* ViewController.swift */,
-				A2607C952AF9578F002167F3 /* HomescreenView.swift */,
+				A2607C972AF958F5002167F3 /* Homescreen */,
 				A2607C872AF95770002167F3 /* Main.storyboard */,
 				A2607C8A2AF95771002167F3 /* Assets.xcassets */,
 				A2607C8C2AF95771002167F3 /* LaunchScreen.storyboard */,
 				A2607C8F2AF95771002167F3 /* Info.plist */,
 			);
 			path = Messenger;
+			sourceTree = "<group>";
+		};
+		A2607C972AF958F5002167F3 /* Homescreen */ = {
+			isa = PBXGroup;
+			children = (
+				A2607C952AF9578F002167F3 /* HomescreenView.swift */,
+				A2607C852AF95770002167F3 /* ViewController.swift */,
+			);
+			path = Homescreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -9,6 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let homescreenView = HomescreenView()
+    
+    //MARK: load the view...
+    override func loadView() {
+        view = homescreenView
+    }
+    
+    //MARK: do on load...
     override func viewDidLoad() {
         super.viewDidLoad()
     }
