@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     let homescreenView = HomescreenView()
     
-    //MARK: load the view...
+    //MARK: load the view....
     override func loadView() {
         view = homescreenView
     }
