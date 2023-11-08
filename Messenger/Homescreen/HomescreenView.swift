@@ -9,5 +9,6 @@ import UIKit
 
 class HomescreenView: UIView {
 
-
+    //MARK: Implement view...
+    
 }
