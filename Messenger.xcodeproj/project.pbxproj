@@ -42,6 +42,12 @@
 		A2C84FBC2AFC26A70093E8C0 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A2C84FBB2AFC26A70093E8C0 /* FirebaseRemoteConfigSwift */; };
 		A2C84FBE2AFC26A70093E8C0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A2C84FBD2AFC26A70093E8C0 /* FirebaseStorage */; };
 		A2C84FC02AFC26A70093E8C0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A2C84FBF2AFC26A70093E8C0 /* FirebaseStorageCombine-Community */; };
+		A2C84FC52AFC2BE70093E8C0 /* BeforeAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FC42AFC2BE70093E8C0 /* BeforeAuthView.swift */; };
+		A2C84FC72AFC2BF30093E8C0 /* BeforeAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FC62AFC2BF30093E8C0 /* BeforeAuthViewController.swift */; };
+		A2C84FCB2AFC2C050093E8C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FCA2AFC2C050093E8C0 /* LoginViewController.swift */; };
+		A2C84FCD2AFC2C160093E8C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FCC2AFC2C160093E8C0 /* LoginView.swift */; };
+		A2C84FCF2AFC2C220093E8C0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FCE2AFC2C220093E8C0 /* SignUpView.swift */; };
+		A2C84FD12AFC2C310093E8C0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FD02AFC2C310093E8C0 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,12 @@
 		A2607C8F2AF95771002167F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2607C952AF9578F002167F3 /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
 		A2C84F882AFC24060093E8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2C84FC42AFC2BE70093E8C0 /* BeforeAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAuthView.swift; sourceTree = "<group>"; };
+		A2C84FC62AFC2BF30093E8C0 /* BeforeAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAuthViewController.swift; sourceTree = "<group>"; };
+		A2C84FCA2AFC2C050093E8C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2C84FCC2AFC2C160093E8C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A2C84FCE2AFC2C220093E8C0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A2C84FD02AFC2C310093E8C0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,9 @@
 			children = (
 				A2607C812AF95770002167F3 /* AppDelegate.swift */,
 				A2607C832AF95770002167F3 /* SceneDelegate.swift */,
+				A2C84FC12AFC2BA30093E8C0 /* Before Authentication Screen */,
+				A2C84FC22AFC2BA70093E8C0 /* Login Screen */,
+				A2C84FC32AFC2BC60093E8C0 /* Sign Up Screen */,
 				A2607C972AF958F5002167F3 /* Homescreen */,
 				A2607C872AF95770002167F3 /* Main.storyboard */,
 				A2607C8A2AF95771002167F3 /* Assets.xcassets */,
@@ -133,6 +148,33 @@
 				A2607C852AF95770002167F3 /* ViewController.swift */,
 			);
 			path = Homescreen;
+			sourceTree = "<group>";
+		};
+		A2C84FC12AFC2BA30093E8C0 /* Before Authentication Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A2C84FC42AFC2BE70093E8C0 /* BeforeAuthView.swift */,
+				A2C84FC62AFC2BF30093E8C0 /* BeforeAuthViewController.swift */,
+			);
+			path = "Before Authentication Screen";
+			sourceTree = "<group>";
+		};
+		A2C84FC22AFC2BA70093E8C0 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A2C84FCC2AFC2C160093E8C0 /* LoginView.swift */,
+				A2C84FCA2AFC2C050093E8C0 /* LoginViewController.swift */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		A2C84FC32AFC2BC60093E8C0 /* Sign Up Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A2C84FCE2AFC2C220093E8C0 /* SignUpView.swift */,
+				A2C84FD02AFC2C310093E8C0 /* SignUpViewController.swift */,
+			);
+			path = "Sign Up Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,10 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C84FCB2AFC2C050093E8C0 /* LoginViewController.swift in Sources */,
+				A2C84FC52AFC2BE70093E8C0 /* BeforeAuthView.swift in Sources */,
 				A2607C862AF95770002167F3 /* ViewController.swift in Sources */,
 				A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */,
+				A2C84FD12AFC2C310093E8C0 /* SignUpViewController.swift in Sources */,
 				A2607C842AF95770002167F3 /* SceneDelegate.swift in Sources */,
 				A2607C962AF9578F002167F3 /* HomescreenView.swift in Sources */,
+				A2C84FCD2AFC2C160093E8C0 /* LoginView.swift in Sources */,
+				A2C84FCF2AFC2C220093E8C0 /* SignUpView.swift in Sources */,
+				A2C84FC72AFC2BF30093E8C0 /* BeforeAuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
