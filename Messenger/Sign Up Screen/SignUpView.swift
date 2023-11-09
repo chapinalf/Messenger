@@ -53,6 +53,7 @@ class SignUpView: UIView {
     func setupTextFieldEmail(){
         textFieldEmail = UITextField()
         textFieldEmail.placeholder = "Email Address"
+        textFieldEmail.keyboardType = .emailAddress
         textFieldEmail.borderStyle = .roundedRect
         textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldEmail)
@@ -62,6 +63,8 @@ class SignUpView: UIView {
         textFieldPassword = UITextField()
         textFieldPassword.placeholder = "Password"
         textFieldPassword.borderStyle = .roundedRect
+        textFieldPassword.textContentType = .password
+        textFieldPassword.isSecureTextEntry = true
         textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldPassword)
     }
@@ -70,6 +73,8 @@ class SignUpView: UIView {
         textFieldPasswordConfirm = UITextField()
         textFieldPasswordConfirm.placeholder = "Password Confirmation"
         textFieldPasswordConfirm.borderStyle = .roundedRect
+        textFieldPassword.textContentType = .password
+        textFieldPassword.isSecureTextEntry = true
         textFieldPasswordConfirm.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldPasswordConfirm)
     }
