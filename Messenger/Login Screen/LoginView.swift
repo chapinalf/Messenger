@@ -42,6 +42,7 @@ class LoginView: UIView {
         textFieldEmail = UITextField()
         textFieldEmail.placeholder = "Email Address"
         textFieldEmail.borderStyle = .roundedRect
+        textFieldEmail.keyboardType = .emailAddress
         textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldEmail)
     }
@@ -49,6 +50,8 @@ class LoginView: UIView {
     func setupTextFieldPassword(){
         textFieldPassword = UITextField()
         textFieldPassword.placeholder = "Password"
+        textFieldPassword.textContentType = .password
+        textFieldPassword.isSecureTextEntry = true
         textFieldPassword.borderStyle = .roundedRect
         textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldPassword)
