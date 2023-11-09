@@ -14,6 +14,10 @@
 		A2607C8B2AF95771002167F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2607C8A2AF95771002167F3 /* Assets.xcassets */; };
 		A2607C8E2AF95771002167F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2607C8C2AF95771002167F3 /* LaunchScreen.storyboard */; };
 		A2607C962AF9578F002167F3 /* HomescreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C952AF9578F002167F3 /* HomescreenView.swift */; };
+		A2AAF8752AFD81BE00D61547 /* CreateNewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAF8742AFD81BE00D61547 /* CreateNewChatViewController.swift */; };
+		A2AAF8772AFD81CC00D61547 /* CreateNewChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAF8762AFD81CC00D61547 /* CreateNewChatView.swift */; };
+		A2AAF87A2AFD81E500D61547 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAF8792AFD81E500D61547 /* ChatView.swift */; };
+		A2AAF87C2AFD81EF00D61547 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AAF87B2AFD81EF00D61547 /* ChatViewController.swift */; };
 		A2C84F892AFC24060093E8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2C84F882AFC24060093E8C0 /* GoogleService-Info.plist */; };
 		A2C84F8C2AFC26A70093E8C0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A2C84F8B2AFC26A70093E8C0 /* FirebaseAnalytics */; };
 		A2C84F8E2AFC26A70093E8C0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A2C84F8D2AFC26A70093E8C0 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -67,6 +71,10 @@
 		A2607C8D2AF95771002167F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2607C8F2AF95771002167F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2607C952AF9578F002167F3 /* HomescreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenView.swift; sourceTree = "<group>"; };
+		A2AAF8742AFD81BE00D61547 /* CreateNewChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewChatViewController.swift; sourceTree = "<group>"; };
+		A2AAF8762AFD81CC00D61547 /* CreateNewChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewChatView.swift; sourceTree = "<group>"; };
+		A2AAF8792AFD81E500D61547 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		A2AAF87B2AFD81EF00D61547 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A2C84F882AFC24060093E8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2C84FC42AFC2BE70093E8C0 /* BeforeAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAuthView.swift; sourceTree = "<group>"; };
 		A2C84FC62AFC2BF30093E8C0 /* BeforeAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAuthViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 				A2C84FC22AFC2BA70093E8C0 /* Login Screen */,
 				A2C84FC32AFC2BC60093E8C0 /* Sign Up Screen */,
 				A2607C972AF958F5002167F3 /* Homescreen */,
+				A2AAF8732AFD819D00D61547 /* Create New Chat */,
+				A2AAF8722AFD818900D61547 /* Chat */,
 				A2607C872AF95770002167F3 /* Main.storyboard */,
 				A2607C8A2AF95771002167F3 /* Assets.xcassets */,
 				A2607C8C2AF95771002167F3 /* LaunchScreen.storyboard */,
@@ -164,6 +174,24 @@
 				A2C84FDF2AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift */,
 			);
 			path = Homescreen;
+			sourceTree = "<group>";
+		};
+		A2AAF8722AFD818900D61547 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A2AAF8792AFD81E500D61547 /* ChatView.swift */,
+				A2AAF87B2AFD81EF00D61547 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A2AAF8732AFD819D00D61547 /* Create New Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A2AAF8762AFD81CC00D61547 /* CreateNewChatView.swift */,
+				A2AAF8742AFD81BE00D61547 /* CreateNewChatViewController.swift */,
+			);
+			path = "Create New Chat";
 			sourceTree = "<group>";
 		};
 		A2C84FC12AFC2BA30093E8C0 /* Before Authentication Screen */ = {
@@ -310,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2AAF8772AFD81CC00D61547 /* CreateNewChatView.swift in Sources */,
 				A2C84FD82AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift in Sources */,
 				A2C84FDC2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift in Sources */,
 				A2C84FCB2AFC2C050093E8C0 /* LoginViewController.swift in Sources */,
@@ -317,9 +346,12 @@
 				A2607C862AF95770002167F3 /* ViewController.swift in Sources */,
 				A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */,
 				A2C84FDA2AFC438D0093E8C0 /* SignUpFirebaseManager.swift in Sources */,
+				A2AAF8752AFD81BE00D61547 /* CreateNewChatViewController.swift in Sources */,
 				A2C84FD12AFC2C310093E8C0 /* SignUpViewController.swift in Sources */,
+				A2AAF87C2AFD81EF00D61547 /* ChatViewController.swift in Sources */,
 				A2C84FD62AFC43150093E8C0 /* ProgressSpinnerViewController.swift in Sources */,
 				A2607C842AF95770002167F3 /* SceneDelegate.swift in Sources */,
+				A2AAF87A2AFD81E500D61547 /* ChatView.swift in Sources */,
 				A2607C962AF9578F002167F3 /* HomescreenView.swift in Sources */,
 				A2C84FCD2AFC2C160093E8C0 /* LoginView.swift in Sources */,
 				A2C84FCF2AFC2C220093E8C0 /* SignUpView.swift in Sources */,
