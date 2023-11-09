@@ -28,6 +28,7 @@ class LoginView: UIView {
         initConstraints()
     }
     
+    //MARK: initializing the UI elements...
     func setupLabelLogin(){
         labelLogin = UILabel()
         labelLogin.text = "Enter your login information:"

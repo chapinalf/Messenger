@@ -48,6 +48,13 @@
 		A2C84FCD2AFC2C160093E8C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FCC2AFC2C160093E8C0 /* LoginView.swift */; };
 		A2C84FCF2AFC2C220093E8C0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FCE2AFC2C220093E8C0 /* SignUpView.swift */; };
 		A2C84FD12AFC2C310093E8C0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FD02AFC2C310093E8C0 /* SignUpViewController.swift */; };
+		A2C84FD42AFC43090093E8C0 /* ProgressSpinnerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FD32AFC43090093E8C0 /* ProgressSpinnerDelegate.swift */; };
+		A2C84FD62AFC43150093E8C0 /* ProgressSpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FD52AFC43150093E8C0 /* ProgressSpinnerViewController.swift */; };
+		A2C84FD82AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FD72AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift */; };
+		A2C84FDA2AFC438D0093E8C0 /* SignUpFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FD92AFC438D0093E8C0 /* SignUpFirebaseManager.swift */; };
+		A2C84FDC2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FDB2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift */; };
+		A2C84FDE2AFC8FA60093E8C0 /* LoginProgressIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FDD2AFC8FA60093E8C0 /* LoginProgressIndicatorManager.swift */; };
+		A2C84FE02AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C84FDF2AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +74,13 @@
 		A2C84FCC2AFC2C160093E8C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A2C84FCE2AFC2C220093E8C0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A2C84FD02AFC2C310093E8C0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A2C84FD32AFC43090093E8C0 /* ProgressSpinnerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerDelegate.swift; sourceTree = "<group>"; };
+		A2C84FD52AFC43150093E8C0 /* ProgressSpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSpinnerViewController.swift; sourceTree = "<group>"; };
+		A2C84FD72AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProgressIndicatorManager.swift; sourceTree = "<group>"; };
+		A2C84FD92AFC438D0093E8C0 /* SignUpFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFirebaseManager.swift; sourceTree = "<group>"; };
+		A2C84FDB2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFirebaseManager.swift; sourceTree = "<group>"; };
+		A2C84FDD2AFC8FA60093E8C0 /* LoginProgressIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProgressIndicatorManager.swift; sourceTree = "<group>"; };
+		A2C84FDF2AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenSignOutBarButtonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +142,7 @@
 			children = (
 				A2607C812AF95770002167F3 /* AppDelegate.swift */,
 				A2607C832AF95770002167F3 /* SceneDelegate.swift */,
+				A2C84FD22AFC42F30093E8C0 /* Progress Indicator */,
 				A2C84FC12AFC2BA30093E8C0 /* Before Authentication Screen */,
 				A2C84FC22AFC2BA70093E8C0 /* Login Screen */,
 				A2C84FC32AFC2BC60093E8C0 /* Sign Up Screen */,
@@ -146,6 +161,7 @@
 			children = (
 				A2607C952AF9578F002167F3 /* HomescreenView.swift */,
 				A2607C852AF95770002167F3 /* ViewController.swift */,
+				A2C84FDF2AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift */,
 			);
 			path = Homescreen;
 			sourceTree = "<group>";
@@ -164,6 +180,8 @@
 			children = (
 				A2C84FCC2AFC2C160093E8C0 /* LoginView.swift */,
 				A2C84FCA2AFC2C050093E8C0 /* LoginViewController.swift */,
+				A2C84FDB2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift */,
+				A2C84FDD2AFC8FA60093E8C0 /* LoginProgressIndicatorManager.swift */,
 			);
 			path = "Login Screen";
 			sourceTree = "<group>";
@@ -173,8 +191,19 @@
 			children = (
 				A2C84FCE2AFC2C220093E8C0 /* SignUpView.swift */,
 				A2C84FD02AFC2C310093E8C0 /* SignUpViewController.swift */,
+				A2C84FD92AFC438D0093E8C0 /* SignUpFirebaseManager.swift */,
+				A2C84FD72AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift */,
 			);
 			path = "Sign Up Screen";
+			sourceTree = "<group>";
+		};
+		A2C84FD22AFC42F30093E8C0 /* Progress Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				A2C84FD32AFC43090093E8C0 /* ProgressSpinnerDelegate.swift */,
+				A2C84FD52AFC43150093E8C0 /* ProgressSpinnerViewController.swift */,
+			);
+			path = "Progress Indicator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,16 +310,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C84FD82AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift in Sources */,
+				A2C84FDC2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift in Sources */,
 				A2C84FCB2AFC2C050093E8C0 /* LoginViewController.swift in Sources */,
 				A2C84FC52AFC2BE70093E8C0 /* BeforeAuthView.swift in Sources */,
 				A2607C862AF95770002167F3 /* ViewController.swift in Sources */,
 				A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */,
+				A2C84FDA2AFC438D0093E8C0 /* SignUpFirebaseManager.swift in Sources */,
 				A2C84FD12AFC2C310093E8C0 /* SignUpViewController.swift in Sources */,
+				A2C84FD62AFC43150093E8C0 /* ProgressSpinnerViewController.swift in Sources */,
 				A2607C842AF95770002167F3 /* SceneDelegate.swift in Sources */,
 				A2607C962AF9578F002167F3 /* HomescreenView.swift in Sources */,
 				A2C84FCD2AFC2C160093E8C0 /* LoginView.swift in Sources */,
 				A2C84FCF2AFC2C220093E8C0 /* SignUpView.swift in Sources */,
 				A2C84FC72AFC2BF30093E8C0 /* BeforeAuthViewController.swift in Sources */,
+				A2C84FD42AFC43090093E8C0 /* ProgressSpinnerDelegate.swift in Sources */,
+				A2C84FDE2AFC8FA60093E8C0 /* LoginProgressIndicatorManager.swift in Sources */,
+				A2C84FE02AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
