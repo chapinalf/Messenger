@@ -10,7 +10,7 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     let signUpView = SignUpView()
-    let defaults = UserDefaults.standard
+    let childProgressView = ProgressSpinnerViewController()
     
     //MARK: load the view...
     override func loadView() {
@@ -20,6 +20,8 @@ class SignUpViewController: UIViewController {
     //MARK: do on load...
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: set up sign up button
         signUpView.buttonSignUp.addTarget(self, action: #selector(onButtonSignUpTapped), for: .touchUpInside)
         
         //MARK: recognizing the taps on the app screen, not the keyboard...
@@ -30,15 +32,20 @@ class SignUpViewController: UIViewController {
     
     //MARK: sign up button tapped...
     @objc func onButtonSignUpTapped(){
-        self.defaults.set("1", forKey: "apiKey")
-        print("API Key saved")
-        dismiss(animated: true)
+        signUpUser()
     }
     
-    //MARK: hide Keyboard...
+    //MARK: hide keyboard...
     @objc func hideKeyboardOnTap(){
         //MARK: removing the keyboard from screen...
         view.endEditing(true)
+    }
+    
+    //MARK: show error alert...
+    func showErrorAlert(_ errorTitle: String, _ errorMessage: String){
+        let alert = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
     }
 
 }
