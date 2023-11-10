@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let homescreenView = HomescreenView()
     var handleAuth: AuthStateDidChangeListenerHandle?
     var currentUser:FirebaseAuth.User?
+    var chatsList = [Chat]()
     
     //MARK: load the view....
     override func loadView() {
@@ -31,10 +32,16 @@ class ViewController: UIViewController {
                 let beforeAuth = UINavigationController(rootViewController: BeforeAuthViewController())
                 beforeAuth.modalPresentationStyle = .fullScreen
                 self.present(beforeAuth, animated: false, completion: nil)
+                
+                //MARK: reset table view...
+                self.chatsList.removeAll()
+                self.homescreenView.tableViewChats.reloadData()
             }else{
                 //MARK: signed in...
                 self.currentUser = user
-                self.homescreenView.labelTest.text = "Logged in!!"
+                
+                //MARK: observe firestore database to display the chats list...
+                //TODO: !!
             }
         }
     }
@@ -51,11 +58,19 @@ class ViewController: UIViewController {
         //MARK: setting the add button to the navigation controller...
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddBarButtonTapped)
         )
+        
+        //MARK: patching table view delegate and data source...
+        homescreenView.tableViewChats.delegate = self
+        homescreenView.tableViewChats.dataSource = self
+        
+        //MARK: removing the separator line...
+        homescreenView.tableViewChats.separatorStyle = .none
     }
      
     //MARK: add bar button tapped...
      @objc func onAddBarButtonTapped(){
-         //TODO: implement add...
+         let createNewChatViewController = CreateNewChatViewController()
+         navigationController?.pushViewController(createNewChatViewController, animated: true)
      }
     
     //MARK: view will disappear...
