@@ -14,8 +14,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewChatsID, for: indexPath) as! ChatsTableViewCell
-        cell.labelName.text = chatsList[indexPath.row].participants[0] //TODO: Update this!
-        cell.labelMostRecentChat.text = chatsList[indexPath.row].messages[0] //TODO: Update this!
+//        cell.labelName.text = chatsList[indexPath.row].participants[0] //TODO: Update this!
+//        cell.labelMostRecentChat.text = chatsList[indexPath.row].messages[0] //TODO: Update this!
         return cell
     }
 }

@@ -82,10 +82,10 @@
 				<key>leading</key>
 				<string>    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewChatsID, for: indexPath) as! ChatsTableViewCell
-        </string>
+//        </string>
 				<key>trailing</key>
 				<string>cell.labelName.text = chatsList[indexPath.row].participants[0] //TODO: Update this!
-        cell.labelMostRecentChat.text = chatsList[indexPath.row].messages[0] //TODO: Update this!
+//        cell.labelMostRecentChat.text = chatsList[indexPath.row].messages[0] //TODO: Update this!
         return cell
 </string>
 			</dict>

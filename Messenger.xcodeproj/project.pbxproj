@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A209BE632AFECE34000C8F0C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE622AFECE34000C8F0C /* Message.swift */; };
+		A209BE652AFED2AA000C8F0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE642AFED2AA000C8F0C /* User.swift */; };
 		A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C812AF95770002167F3 /* AppDelegate.swift */; };
 		A2607C842AF95770002167F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C832AF95770002167F3 /* SceneDelegate.swift */; };
 		A2607C862AF95770002167F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C852AF95770002167F3 /* ViewController.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A209BE622AFECE34000C8F0C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A209BE642AFED2AA000C8F0C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2607C7E2AF95770002167F3 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2607C812AF95770002167F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2607C832AF95770002167F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,7 +223,9 @@
 		A2AAF8812AFD8A6900D61547 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				A209BE642AFED2AA000C8F0C /* User.swift */,
 				A2AAF8822AFD8B2E00D61547 /* Chat.swift */,
+				A209BE622AFECE34000C8F0C /* Message.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				A2C84FD82AFC43520093E8C0 /* SignUpProgressIndicatorManager.swift in Sources */,
 				A2AAF8802AFD898B00D61547 /* ChatsTableViewCell.swift in Sources */,
 				A2C84FDC2AFC8F8E0093E8C0 /* LoginFirebaseManager.swift in Sources */,
+				A209BE652AFED2AA000C8F0C /* User.swift in Sources */,
 				A2C84FCB2AFC2C050093E8C0 /* LoginViewController.swift in Sources */,
 				A2C84FC52AFC2BE70093E8C0 /* BeforeAuthView.swift in Sources */,
 				A2607C862AF95770002167F3 /* ViewController.swift in Sources */,
@@ -405,6 +412,7 @@
 				A2AAF8872AFD9EC000D61547 /* SearchBottomSheetView.swift in Sources */,
 				A2AAF88C2AFD9F9E00D61547 /* NotificationNames.swift in Sources */,
 				A2C84FE02AFCA0CC0093E8C0 /* HomescreenSignOutBarButtonManager.swift in Sources */,
+				A209BE632AFECE34000C8F0C /* Message.swift in Sources */,
 				A2AAF88E2AFD9FF300D61547 /* SearchBottomSheetController.swift in Sources */,
 				A2AAF87E2AFD893A00D61547 /* Configs.swift in Sources */,
 			);
