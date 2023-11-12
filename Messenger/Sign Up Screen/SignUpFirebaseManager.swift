@@ -69,30 +69,24 @@ extension SignUpViewController{
     
     //MARK: logic to add a user to Firestore...
     func saveUserToFireStore(){
-        if let userName = currentUser!.displayName, let userEmail = currentUser!.email{
-            let collectionUsers = database
-                .collection("users")
-//                .document(userEmail)
-//                .collection("chats")
+        if let userName = Auth.auth().currentUser?.displayName, let userEmail = Auth.auth().currentUser?.email{
+            //MARK: show progress indicator...
+            showActivityIndicator()
+            
+            database.collection("users").document(userEmail).setData([
+                  "name": userName
+                ]) { err in
+                  if let err = err {
+                      self.showErrorAlert("Sign Up Failed!", "Please try again!")
+                      print("Error writing document: \(err)")
+                  } else {
+                      print("Document successfully written!")
+                  }
+                }
             
             //MARK: show progress indicator...
             showActivityIndicator()
-        
-            
-            do{
-                let user = User(name: userName, chats: <#T##[Chat]#>)
-                try collectionUsers.addDocument(from: user, completion: {(error) in
-                    if error == nil{
-                        
-                        //MARK: hide progress indicator...
-                        self.hideActivityIndicator()
-                        
-                        self.navigationController?.popViewController(animated: true)
-                    }
-                })
-            }catch{
-                print("Error adding document!")
-            }
         }
     }
+    
 }

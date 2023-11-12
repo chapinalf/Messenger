@@ -15,7 +15,6 @@ class SignUpViewController: UIViewController {
     let signUpView = SignUpView()
     let childProgressView = ProgressSpinnerViewController()
     let database = Firestore.firestore()
-    var currentUser:FirebaseAuth.User?
     
     //MARK: load the view...
     override func loadView() {
