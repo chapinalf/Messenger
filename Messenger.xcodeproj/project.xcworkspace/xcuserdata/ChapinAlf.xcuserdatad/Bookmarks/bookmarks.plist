@@ -10,15 +10,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>16</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>42</string>
+					<string>46</string>
 					<key>StartingColumnNumber</key>
-					<string>16</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>42</string>
+					<string>45</string>
 					<key>Timestamp</key>
-					<string>721261015.530912</string>
+					<string>721603816.20052</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,15 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>                //MARK: observe firestore database to display the chats list...
+</string>
 				<key>leading</key>
 				<string>                self.currentUser = user
                 
-                </string>
+</string>
 				<key>trailing</key>
-				<string>//MARK: observe firestore database to display the chats list...
-                //TODO: !!
-            }
+				<string>                self.database.collection("users")
+                    .document((self.currentUser?.email)!)
+                    .collection("chats")
 </string>
 			</dict>
 			<key>type</key>
@@ -82,10 +83,10 @@
 				<key>leading</key>
 				<string>    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewChatsID, for: indexPath) as! ChatsTableViewCell
-//        </string>
+      </string>
 				<key>trailing</key>
-				<string>cell.labelName.text = chatsList[indexPath.row].participants[0] //TODO: Update this!
-//        cell.labelMostRecentChat.text = chatsList[indexPath.row].messages[0] //TODO: Update this!
+				<string>  cell.labelName.text = chatsList[indexPath.row].toName
+        cell.labelMostRecentChat.text = chatsList[indexPath.row].lastSentMessage
         return cell
 </string>
 			</dict>

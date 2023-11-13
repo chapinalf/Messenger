@@ -50,6 +50,11 @@ class CreateNewChatViewController: UIViewController {
     @objc func onNameSelected(notification: Notification){
         if let selectedUser = notification.object as? User {
             createNewChatView.labelName.text = selectedUser.name
+            
+            let chatViewController = ChatViewController()
+            chatViewController.toUserName = selectedUser.name
+            chatViewController.toUserEmail = selectedUser.id!
+            navigationController?.pushViewController(chatViewController, animated: true)
         }
     }
     

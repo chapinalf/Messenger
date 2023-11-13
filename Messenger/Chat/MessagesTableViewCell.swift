@@ -1,24 +1,26 @@
 //
-//  ChatsTableViewCell.swift
+//  MessagesTableViewCell.swift
 //  Messenger
 //
-//  Created by Chapin Alf on 11/9/23.
+//  Created by Chapin Alf on 11/13/23.
 //
 
 import UIKit
 
-class ChatsTableViewCell: UITableViewCell {
+class MessagesTableViewCell: UITableViewCell {
     
     var wrapperCellView: UIView!
     var labelName: UILabel!
-    var labelMostRecentChat: UILabel!
+    var labelTimestamp: UILabel!
+    var labelMessage: UILabel!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupWrapperCellView()
         setupLabelName()
-        setupLabelMostRecentChat()
+        setupLabelTimestamp()
+        setupLabelMessage()
         initConstraints()
     }
     
@@ -47,11 +49,18 @@ class ChatsTableViewCell: UITableViewCell {
         wrapperCellView.addSubview(labelName)
     }
     
-    func setupLabelMostRecentChat(){
-        labelMostRecentChat = UILabel()
-        labelMostRecentChat.font = UIFont.boldSystemFont(ofSize: 14)
-        labelMostRecentChat.translatesAutoresizingMaskIntoConstraints = false
-        wrapperCellView.addSubview(labelMostRecentChat)
+    func setupLabelTimestamp(){
+        labelTimestamp = UILabel()
+        labelTimestamp.font = UIFont.systemFont(ofSize: 12)
+        labelTimestamp.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(labelTimestamp)
+    }
+    
+    func setupLabelMessage(){
+        labelMessage = UILabel()
+        labelMessage.font = UIFont.systemFont(ofSize: 14)
+        labelMessage.translatesAutoresizingMaskIntoConstraints = false
+        wrapperCellView.addSubview(labelMessage)
     }
     
     func initConstraints(){
@@ -66,12 +75,17 @@ class ChatsTableViewCell: UITableViewCell {
             labelName.heightAnchor.constraint(equalToConstant: 20),
             labelName.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
             
-            labelMostRecentChat.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 2),
-            labelMostRecentChat.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelMostRecentChat.heightAnchor.constraint(equalToConstant: 16),
-            labelMostRecentChat.widthAnchor.constraint(lessThanOrEqualTo: labelName.widthAnchor),
+            labelTimestamp.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 2),
+            labelTimestamp.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
+            labelTimestamp.heightAnchor.constraint(equalToConstant: 16),
+            labelTimestamp.widthAnchor.constraint(lessThanOrEqualTo: labelName.widthAnchor),
             
-            wrapperCellView.heightAnchor.constraint(equalToConstant: 56)
+            labelMessage.topAnchor.constraint(equalTo: labelTimestamp.bottomAnchor, constant: 2),
+            labelMessage.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
+            labelMessage.heightAnchor.constraint(equalToConstant: 16),
+            labelMessage.widthAnchor.constraint(lessThanOrEqualTo: labelName.widthAnchor),
+            
+            wrapperCellView.heightAnchor.constraint(equalToConstant: 52)
         ])
     }
 

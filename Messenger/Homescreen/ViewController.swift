@@ -7,12 +7,15 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ViewController: UIViewController {
 
     let homescreenView = HomescreenView()
     var handleAuth: AuthStateDidChangeListenerHandle?
     var currentUser:FirebaseAuth.User?
+    let database = Firestore.firestore()
     var chatsList = [Chat]()
     
     //MARK: load the view....
@@ -41,7 +44,23 @@ class ViewController: UIViewController {
                 self.currentUser = user
                 
                 //MARK: observe firestore database to display the chats list...
-                //TODO: !!
+                self.database.collection("users")
+                    .document((self.currentUser?.email)!)
+                    .collection("chats")
+                    .addSnapshotListener(includeMetadataChanges: false, listener: {querySnapshot, error in
+                        if let documents = querySnapshot?.documents{
+                            self.chatsList.removeAll()
+                            for document in documents{
+                                do{
+                                    let chat = try document.data(as: Chat.self)
+                                    self.chatsList.append(chat)
+                                }catch{
+                                    print(error)
+                                }
+                            }
+                            self.homescreenView.tableViewChats.reloadData()
+                        }
+                    })
             }
         }
     }

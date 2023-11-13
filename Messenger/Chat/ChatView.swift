@@ -9,7 +9,9 @@ import UIKit
 
 class ChatView: UIView {
 
-    var labelTest: UILabel!
+    var labelTo: UILabel!
+    var textViewMessage: UITextView!
+    var tableViewMessages: UITableView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,18 +20,36 @@ class ChatView: UIView {
         self.backgroundColor = .white
         
         //MARK: initializing the UI elements and constraints...
-        setupLabelTest()
+        setupLabelTo()
+        setupTableViewMessages()
+        setUpTextViewMessage()
+        
         initConstraints()
     }
     
     //MARK: initializing the UI elements...
-    func setupLabelTest(){
-        labelTest = UILabel()
-        labelTest.text = "TEST"
-        labelTest.textColor = UIColor.black
-        labelTest.font = UIFont.boldSystemFont(ofSize: 22.0)
-        labelTest.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(labelTest)
+    func setupLabelTo(){
+        labelTo = UILabel()
+        labelTo.textColor = UIColor.black
+        labelTo.font = UIFont.boldSystemFont(ofSize: 22.0)
+        labelTo.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelTo)
+    }
+    
+    //MARK: initializing the UI elements...
+    func setupTableViewMessages(){
+        tableViewMessages = UITableView()
+        tableViewMessages.register(MessagesTableViewCell.self, forCellReuseIdentifier: Configs.tableViewMessagesID)
+        tableViewMessages.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(tableViewMessages)
+    }
+    
+    func setUpTextViewMessage(){
+        textViewMessage = UITextView()
+        textViewMessage.layer.borderWidth = 1
+        textViewMessage.layer.borderColor = UIColor.lightGray.cgColor
+        textViewMessage.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(textViewMessage)
     }
     
     required init?(coder: NSCoder) {
@@ -39,8 +59,18 @@ class ChatView: UIView {
     //MARK: initializing constraints...
     func initConstraints(){
         NSLayoutConstraint.activate([
-            labelTest.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            labelTest.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            labelTo.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            labelTo.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 8),
+        
+            tableViewMessages.topAnchor.constraint(equalTo: labelTo.bottomAnchor, constant: 8),
+            tableViewMessages.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            tableViewMessages.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            tableViewMessages.heightAnchor.constraint(equalToConstant: 300),
+            
+            textViewMessage.topAnchor.constraint(equalTo: tableViewMessages.bottomAnchor),
+            textViewMessage.leadingAnchor.constraint(equalTo:  self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            textViewMessage.trailingAnchor.constraint(equalTo:  self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            textViewMessage.bottomAnchor.constraint(equalTo:  self.keyboardLayoutGuide.topAnchor, constant: -8),
         ])
     }
 
