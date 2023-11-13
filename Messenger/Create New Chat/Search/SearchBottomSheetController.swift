@@ -18,8 +18,9 @@ class SearchBottomSheetController: UIViewController {
     
     let database = Firestore.firestore()
     
-    //MARK: the array to display the table view...
-    var namesForTableView = [User]()
+    var users = [User]()
+    
+    var usersForTableView = [User]()
     
     override func loadView() {
         view = searchSheet
@@ -39,45 +40,45 @@ class SearchBottomSheetController: UIViewController {
         self.database.collection("users")
             .addSnapshotListener(includeMetadataChanges: false, listener: {querySnapshot, error in
                 if let documents = querySnapshot?.documents{
-                    self.namesForTableView.removeAll()
+                    self.usersForTableView.removeAll()
                     for document in documents{
                         do{
                             let user = try document.data(as: User.self)
-                            self.namesForTableView.append(user)
+                            self.users.append(user)
                         }catch{
                             print(error)
                         }
                     }
-                    self.namesForTableView.sort(by: {$0.name < $1.name})
+                    self.users.sort(by: {$0.name < $1.name})
+                    //MARK: remove yourself as an option
+                    if let indexToRemove = self.users.firstIndex(where: {$0.id! == Auth.auth().currentUser?.email}) {
+                        self.users.remove(at: indexToRemove)
+                    }
+                    self.usersForTableView = self.users
                     self.searchSheet.tableViewSearchResults.reloadData()
                 }
             })
-        
-        //MARK: remove yourself as an option
-        //TODO: ASK HOW TO REMOVE YOURSELF AS AN OPTION, THIS IS NOT WORKING!
-        if let indexToRemove = namesForTableView.firstIndex(where: {$0.id == Auth.auth().currentUser?.email}) {
-            namesForTableView.remove(at: indexToRemove)
-        }
+    
     }
 }
 
 //MARK: adopting Table View protocols...
 extension SearchBottomSheetController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return namesForTableView.count
+        return usersForTableView.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: Configs.searchTableViewID, for: indexPath) as! SearchTableCell
         
-        cell.labelTitle.text = namesForTableView[indexPath.row].name
+        cell.labelTitle.text = usersForTableView[indexPath.row].name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //MARK: name selected....
-        notificationCenter.post(name: .nameSelected, object: namesForTableView[indexPath.row])
+        notificationCenter.post(name: .nameSelected, object: usersForTableView[indexPath.row])
         
         //MARK: dismiss the bottom search sheet...
         self.dismiss(animated: true)
@@ -87,12 +88,14 @@ extension SearchBottomSheetController: UITableViewDelegate, UITableViewDataSourc
 //MARK: adopting the search bar protocol...
 extension SearchBottomSheetController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText != ""{
-            self.namesForTableView.removeAll()
+        if searchText == ""{
+            self.usersForTableView = users
+        } else {
+            self.usersForTableView.removeAll()
 
-            for user in namesForTableView{
+            for user in users{
                 if user.name.contains(searchText){
-                    self.namesForTableView.append(user)
+                    self.usersForTableView.append(user)
                 }
             }
         }

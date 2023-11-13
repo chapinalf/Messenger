@@ -119,13 +119,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>57</string>
+					<string>60</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>56</string>
+					<string>59</string>
 					<key>Timestamp</key>
-					<string>721523324.026325</string>
+					<string>721535099.397712</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -141,16 +141,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        //TODO: ASK HOW TO REMOVE YOURSELF AS AN OPTION, THIS IS NOT WORKING!
+				<string>            })
 </string>
 				<key>leading</key>
-				<string>        
-        //MARK: remove yourself as an option
+				<string>                    self.searchSheet.tableViewSearchResults.reloadData()
+                }
 </string>
 				<key>trailing</key>
-				<string>        if let indexToRemove = namesForTableView.firstIndex(where: {$0.id == Auth.auth().currentUser?.email}) {
-            namesForTableView.remove(at: indexToRemove)
-        }
+				<string>    
+    }
+}
 </string>
 			</dict>
 			<key>type</key>
