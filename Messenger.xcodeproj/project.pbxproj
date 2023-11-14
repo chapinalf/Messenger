@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		A209BE632AFECE34000C8F0C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE622AFECE34000C8F0C /* Message.swift */; };
 		A209BE672B018AF1000C8F0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE662B018AF1000C8F0C /* User.swift */; };
-		A209BE702B02B9EB000C8F0C /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE6F2B02B9EB000C8F0C /* MessagesTableViewCell.swift */; };
+		A209BE702B02B9EB000C8F0C /* User1MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE6F2B02B9EB000C8F0C /* User1MessagesTableViewCell.swift */; };
 		A209BE722B02BC4F000C8F0C /* MessagesTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE712B02BC4F000C8F0C /* MessagesTableViewManager.swift */; };
 		A209BE742B02C0FF000C8F0C /* SendMessageFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE732B02C0FF000C8F0C /* SendMessageFirebaseManager.swift */; };
 		A209BE762B02C3E9000C8F0C /* SendProgressIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE752B02C3E9000C8F0C /* SendProgressIndicatorManager.swift */; };
+		A209BE782B03CAA8000C8F0C /* User2MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209BE772B03CAA8000C8F0C /* User2MessagesTableViewCell.swift */; };
 		A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C812AF95770002167F3 /* AppDelegate.swift */; };
 		A2607C842AF95770002167F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C832AF95770002167F3 /* SceneDelegate.swift */; };
 		A2607C862AF95770002167F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2607C852AF95770002167F3 /* ViewController.swift */; };
@@ -78,10 +79,11 @@
 /* Begin PBXFileReference section */
 		A209BE622AFECE34000C8F0C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A209BE662B018AF1000C8F0C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A209BE6F2B02B9EB000C8F0C /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		A209BE6F2B02B9EB000C8F0C /* User1MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User1MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		A209BE712B02BC4F000C8F0C /* MessagesTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewManager.swift; sourceTree = "<group>"; };
 		A209BE732B02C0FF000C8F0C /* SendMessageFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageFirebaseManager.swift; sourceTree = "<group>"; };
 		A209BE752B02C3E9000C8F0C /* SendProgressIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendProgressIndicatorManager.swift; sourceTree = "<group>"; };
+		A209BE772B03CAA8000C8F0C /* User2MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User2MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		A2607C7E2AF95770002167F3 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2607C812AF95770002167F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2607C832AF95770002167F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				A2AAF8792AFD81E500D61547 /* ChatView.swift */,
-				A209BE6F2B02B9EB000C8F0C /* MessagesTableViewCell.swift */,
+				A209BE6F2B02B9EB000C8F0C /* User1MessagesTableViewCell.swift */,
+				A209BE772B03CAA8000C8F0C /* User2MessagesTableViewCell.swift */,
 				A2AAF87B2AFD81EF00D61547 /* ChatViewController.swift */,
 				A209BE712B02BC4F000C8F0C /* MessagesTableViewManager.swift */,
 				A209BE732B02C0FF000C8F0C /* SendMessageFirebaseManager.swift */,
@@ -406,11 +409,12 @@
 				A2607C862AF95770002167F3 /* ViewController.swift in Sources */,
 				A2607C822AF95770002167F3 /* AppDelegate.swift in Sources */,
 				A2AAF8852AFD92A400D61547 /* ChatsTableViewManager.swift in Sources */,
+				A209BE782B03CAA8000C8F0C /* User2MessagesTableViewCell.swift in Sources */,
 				A209BE722B02BC4F000C8F0C /* MessagesTableViewManager.swift in Sources */,
 				A2C84FDA2AFC438D0093E8C0 /* SignUpFirebaseManager.swift in Sources */,
 				A2AAF8752AFD81BE00D61547 /* CreateNewChatViewController.swift in Sources */,
 				A2C84FD12AFC2C310093E8C0 /* SignUpViewController.swift in Sources */,
-				A209BE702B02B9EB000C8F0C /* MessagesTableViewCell.swift in Sources */,
+				A209BE702B02B9EB000C8F0C /* User1MessagesTableViewCell.swift in Sources */,
 				A2AAF87C2AFD81EF00D61547 /* ChatViewController.swift in Sources */,
 				A2C84FD62AFC43150093E8C0 /* ProgressSpinnerViewController.swift in Sources */,
 				A2AAF8832AFD8B2E00D61547 /* Chat.swift in Sources */,

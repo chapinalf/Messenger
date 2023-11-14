@@ -39,7 +39,8 @@ class ChatView: UIView {
     //MARK: initializing the UI elements...
     func setupTableViewMessages(){
         tableViewMessages = UITableView()
-        tableViewMessages.register(MessagesTableViewCell.self, forCellReuseIdentifier: Configs.tableViewMessagesID)
+        tableViewMessages.register(User1MessagesTableViewCell.self, forCellReuseIdentifier: Configs.tableViewMessagesID1)
+        tableViewMessages.register(User2MessagesTableViewCell.self, forCellReuseIdentifier: Configs.tableViewMessagesID2)
         tableViewMessages.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(tableViewMessages)
     }

@@ -49,29 +49,25 @@ class ChatsTableViewCell: UITableViewCell {
     
     func setupLabelMostRecentChat(){
         labelMostRecentChat = UILabel()
-        labelMostRecentChat.font = UIFont.boldSystemFont(ofSize: 14)
+        labelMostRecentChat.font = UIFont.systemFont(ofSize: 14)
         labelMostRecentChat.translatesAutoresizingMaskIntoConstraints = false
         wrapperCellView.addSubview(labelMostRecentChat)
     }
     
     func initConstraints(){
         NSLayoutConstraint.activate([
-            wrapperCellView.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
+            wrapperCellView.topAnchor.constraint(equalTo: self.topAnchor,constant: 5),
             wrapperCellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            wrapperCellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            wrapperCellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             wrapperCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 8),
-            labelName.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 16),
-            labelName.heightAnchor.constraint(equalToConstant: 20),
-            labelName.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
+            labelName.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 8),
             
-            labelMostRecentChat.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 2),
+            labelMostRecentChat.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 4),
             labelMostRecentChat.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelMostRecentChat.heightAnchor.constraint(equalToConstant: 16),
-            labelMostRecentChat.widthAnchor.constraint(lessThanOrEqualTo: labelName.widthAnchor),
             
-            wrapperCellView.heightAnchor.constraint(equalToConstant: 56)
+            wrapperCellView.heightAnchor.constraint(equalToConstant: 58)
         ])
     }
 

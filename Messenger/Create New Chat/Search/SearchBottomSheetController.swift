@@ -71,8 +71,8 @@ extension SearchBottomSheetController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: Configs.searchTableViewID, for: indexPath) as! SearchTableCell
-        
         cell.labelTitle.text = usersForTableView[indexPath.row].name
+        cell.selectionStyle = .none
         return cell
     }
     

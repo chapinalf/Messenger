@@ -1,5 +1,5 @@
 //
-//  MessagesTableViewCell.swift
+//  User1MessagesTableViewCell.swift
 //  Messenger
 //
 //  Created by Chapin Alf on 11/13/23.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MessagesTableViewCell: UITableViewCell {
+class User1MessagesTableViewCell: UITableViewCell {
     
     var wrapperCellView: UIView!
     var labelName: UILabel!
     var labelTimestamp: UILabel!
-    var labelMessage: UILabel!
+    var textViewMessage: UITextView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,7 +20,7 @@ class MessagesTableViewCell: UITableViewCell {
         setupWrapperCellView()
         setupLabelName()
         setupLabelTimestamp()
-        setupLabelMessage()
+        setupTextViewMessage()
         initConstraints()
     }
     
@@ -30,9 +30,7 @@ class MessagesTableViewCell: UITableViewCell {
     
     func setupWrapperCellView(){
         wrapperCellView = UITableViewCell()
-        
-        //working with the shadows and colors...
-        wrapperCellView.backgroundColor = .white
+        wrapperCellView.backgroundColor = UIColor(red: 173/255, green: 216/255, blue: 230/255, alpha: 1.0)
         wrapperCellView.layer.cornerRadius = 6.0
         wrapperCellView.layer.shadowColor = UIColor.gray.cgColor
         wrapperCellView.layer.shadowOffset = .zero
@@ -56,36 +54,33 @@ class MessagesTableViewCell: UITableViewCell {
         wrapperCellView.addSubview(labelTimestamp)
     }
     
-    func setupLabelMessage(){
-        labelMessage = UILabel()
-        labelMessage.font = UIFont.systemFont(ofSize: 14)
-        labelMessage.translatesAutoresizingMaskIntoConstraints = false
-        wrapperCellView.addSubview(labelMessage)
+    func setupTextViewMessage(){
+        textViewMessage = UITextView()
+        textViewMessage.font = UIFont.systemFont(ofSize: 14)
+        textViewMessage.translatesAutoresizingMaskIntoConstraints = false
+        textViewMessage.isEditable = false
+        textViewMessage.backgroundColor = UIColor(red: 173/255, green: 216/255, blue: 230/255, alpha: 1.0)
+        textViewMessage.isScrollEnabled = false
+        wrapperCellView.addSubview(textViewMessage)
     }
     
     func initConstraints(){
         NSLayoutConstraint.activate([
             wrapperCellView.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
-            wrapperCellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            wrapperCellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50),
             wrapperCellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             wrapperCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             labelName.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 8),
-            labelName.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 16),
-            labelName.heightAnchor.constraint(equalToConstant: 20),
-            labelName.widthAnchor.constraint(lessThanOrEqualTo: wrapperCellView.widthAnchor),
+            labelName.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 8),
             
-            labelTimestamp.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 2),
-            labelTimestamp.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelTimestamp.heightAnchor.constraint(equalToConstant: 16),
-            labelTimestamp.widthAnchor.constraint(lessThanOrEqualTo: labelName.widthAnchor),
+            labelTimestamp.topAnchor.constraint(equalTo: wrapperCellView.topAnchor, constant: 8),
+            labelTimestamp.trailingAnchor.constraint(equalTo: wrapperCellView.trailingAnchor, constant: -8),
             
-            labelMessage.topAnchor.constraint(equalTo: labelTimestamp.bottomAnchor, constant: 2),
-            labelMessage.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelMessage.heightAnchor.constraint(equalToConstant: 16),
-            labelMessage.widthAnchor.constraint(lessThanOrEqualTo: labelName.widthAnchor),
-            
-            wrapperCellView.heightAnchor.constraint(equalToConstant: 52)
+            textViewMessage.topAnchor.constraint(equalTo: labelName.bottomAnchor),
+            textViewMessage.leadingAnchor.constraint(equalTo: wrapperCellView.leadingAnchor, constant: 4),
+            textViewMessage.trailingAnchor.constraint(equalTo: wrapperCellView.trailingAnchor, constant: -8),
+            textViewMessage.bottomAnchor.constraint(equalTo: wrapperCellView.bottomAnchor, constant: -8),
         ])
     }
 

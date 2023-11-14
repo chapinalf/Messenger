@@ -46,9 +46,12 @@ class ChatViewController: UIViewController {
                             print(error)
                         }
                     }
+                    self.messagesList.sort(by: {$0.dateTime < $1.dateTime})
                     self.chatView.tableViewMessages.reloadData()
+                    self.scrollToBottom()
                 }
             })
+
     }
     
     //MARK: do on load...
@@ -68,16 +71,18 @@ class ChatViewController: UIViewController {
         
         //MARK: removing the separator line...
         chatView.tableViewMessages.separatorStyle = .none
+        
+        //MARK: recognizing the taps on the app screen, not the keyboard...
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardOnTap))
+        tapRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapRecognizer)
     }
 
     func getCurrentDateAndTime() -> String {
         let currentDate = Date()
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy HH:mm"
-        
         let formattedDate = dateFormatter.string(from: currentDate)
-        
         return formattedDate
     }
     
@@ -101,4 +106,20 @@ class ChatViewController: UIViewController {
              }
          }
      }
+    
+    func scrollToBottom() {
+        let numberOfSections = chatView.tableViewMessages.numberOfSections
+        let numberOfRows = chatView.tableViewMessages.numberOfRows(inSection: numberOfSections - 1)
+
+        if numberOfRows > 0 {
+            let indexPath = IndexPath(row: numberOfRows - 1, section: numberOfSections - 1)
+            chatView.tableViewMessages.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
+    //MARK: hide keyboard...
+    @objc func hideKeyboardOnTap(){
+        //MARK: removing the keyboard from screen...
+        view.endEditing(true)
+    }
 }

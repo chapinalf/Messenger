@@ -15,7 +15,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewChatsID, for: indexPath) as! ChatsTableViewCell
         cell.labelName.text = chatsList[indexPath.row].toName
-        cell.labelMostRecentChat.text = chatsList[indexPath.row].lastSentMessage
+        cell.labelMostRecentChat.text = characterLimit(chatsList[indexPath.row].lastSentMessage)
         return cell
     }
     
@@ -24,5 +24,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         chatViewController.toUserName = chatsList[indexPath.row].toName
         chatViewController.toUserEmail = chatsList[indexPath.row].toEmail
         navigationController?.pushViewController(chatViewController, animated: true)
+    }
+    
+    func characterLimit(_ s: String) -> String {
+        let maxCharLimit = 45
+        
+        if s.count > maxCharLimit {
+            return String(s.prefix(maxCharLimit)) + "..."
+        } else {
+            return s
+        }
     }
 }
