@@ -73,8 +73,8 @@ class SignUpView: UIView {
         textFieldPasswordConfirm = UITextField()
         textFieldPasswordConfirm.placeholder = "Password Confirmation"
         textFieldPasswordConfirm.borderStyle = .roundedRect
-        textFieldPassword.textContentType = .password
-        textFieldPassword.isSecureTextEntry = true
+        textFieldPasswordConfirm.textContentType = .password
+        textFieldPasswordConfirm.isSecureTextEntry = true
         textFieldPasswordConfirm.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(textFieldPasswordConfirm)
     }

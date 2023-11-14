@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 extension SignUpViewController{
     
@@ -58,9 +60,32 @@ extension SignUpViewController{
                 self.hideActivityIndicator()
                 self.showErrorAlert("Sign Up Failed!", (String(describing: error!.localizedDescription)) + " Please try again!")
             }else{
-                self.hideActivityIndicator()
-                self.dismiss(animated: true)
+                self.saveUserToFireStore()
             }
         })
     }
+    
+    func saveUserToFireStore(){
+        if let userName = Auth.auth().currentUser?.displayName, let userEmail = Auth.auth().currentUser?.email{
+            let collectionContacts = database
+                .collection("users")
+            
+            //MARK: show progress indicator...
+            showActivityIndicator()
+            
+            let user = User(name: userName)
+            
+            do{
+                try collectionContacts.document(userEmail).setData(from: user, completion: {(error) in
+                    if error == nil{
+                        self.hideActivityIndicator()
+                        self.dismiss(animated: true)
+                    }
+                })
+            }catch{
+                print("Error adding document!")
+            }
+        }
+    }
+    
 }

@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class SignUpViewController: UIViewController {
 
     let signUpView = SignUpView()
     let childProgressView = ProgressSpinnerViewController()
+    let database = Firestore.firestore()
     
     //MARK: load the view...
     override func loadView() {
